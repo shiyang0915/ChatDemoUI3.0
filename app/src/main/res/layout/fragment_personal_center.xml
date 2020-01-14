@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x90"
+        android:background="#4285F4"
+        android:gravity="center"
+        android:text="个人中心"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/x34" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x30"
+        android:layout_marginTop="@dimen/x33">
+
+        <ImageView
+            android:id="@+id/image_personal_head"
+            android:layout_width="@dimen/x160"
+            android:layout_height="@dimen/x160" />
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/image_personal_head">
+
+            <TextView
+                android:id="@+id/tv_personal_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x20"
+                android:text="用户名:李大白"
+                android:textColor="#333333"
+                android:textSize="@dimen/x40" />
+
+
+            <TextView
+                android:id="@+id/tv_personal_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_personal_username"
+                android:layout_marginLeft="@dimen/x20"
+                android:layout_marginTop="@dimen/x33"
+                android:text="账号:fg18515599988"
+                android:textColor="#999999"
+                android:textSize="@dimen/x30" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x20"
+        android:layout_marginTop="@dimen/x30"
+        android:background="#F5F6F7" />
+
+    <LinearLayout
+        android:id="@+id/linear_personal_right_arrow"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x120"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/x30"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="设置"
+            android:textColor="#333333"
+            android:textSize="@dimen/x34" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/x30"
+            android:paddingRight="@dimen/x30">
+
+
+            <ImageView
+                android:layout_width="@dimen/x16"
+                android:layout_height="@dimen/x30"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/personal_right_arrow" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:layout_marginLeft="@dimen/x30"
+        android:layout_marginRight="@dimen/x30"
+        android:background="#DEDEDE" />
+
+</LinearLayout>

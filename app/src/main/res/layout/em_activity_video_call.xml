@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+
+    <RelativeLayout
+        android:id="@+id/layout_surface_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.hyphenate.media.EMCallSurfaceView
+            android:id="@+id/opposite_surface"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.hyphenate.media.EMCallSurfaceView
+            android:id="@+id/local_surface"
+            android:layout_width="@dimen/x150"
+            android:layout_height="@dimen/x267"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/x33"
+            android:layout_marginRight="@dimen/x30" />
+    </RelativeLayout>
+
+    <!-- 头像 昵称  状态 -->
+    <LinearLayout
+        android:id="@+id/linear_conneceting_head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x64"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/image_video_call_head"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/x100"
+            android:layout_marginLeft="@dimen/x30"
+            android:background="@drawable/huanxing_robbt_bg"
+            android:src="@mipmap/robot_head" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/x16"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <!--昵称-->
+            <TextView
+                android:id="@+id/tv_nick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="秦淇淇"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/x40" />
+
+            <!--连接状态-->
+            <TextView
+                android:id="@+id/tv_call_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x10"
+                android:text="正在等待对方接受邀请"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/x28" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <!-- 发起方 -->
+    <LinearLayout
+        android:id="@+id/ll_bottom_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/x70"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:visibility="invisible">
+
+
+        <!--切换摄像头-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_switch_camera"
+                android:layout_width="@dimen/x120"
+                android:layout_height="@dimen/x120"
+                android:background="@mipmap/video_qiehuan_camera" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x20"
+                android:text="切换摄像头"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/x24" />
+
+        </LinearLayout>
+
+        <!--挂断-->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_hangup_call"
+                android:layout_width="@dimen/x120"
+                android:layout_height="@dimen/x120"
+                android:background="@mipmap/hold_on" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x20"
+                android:text="挂断"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/x24" />
+
+        </LinearLayout>
+
+        <!--摄像头 开/关 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/x120"
+                android:layout_height="@dimen/x120"
+                android:src="@mipmap/video_camera_open_state" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x20"
+                android:text="关闭摄像头"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/x24" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <!-- 接收方 -->
+    <LinearLayout
+        android:id="@+id/ll_coming_call"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/x70"
+        android:orientation="vertical">
+
+
+        <!--关闭摄像头-->
+        <LinearLayout
+            android:id="@+id/linear_qiehuan_camera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <!--空布局-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:layout_width="@dimen/x120"
+                    android:layout_height="@dimen/x120"
+                    android:src="@mipmap/video_qiehuan_camera" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x20"
+                    android:text="切换摄像头"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/x24" />
+
+            </LinearLayout>
+
+            <!--关闭摄像头-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:layout_marginLeft="@dimen/x210"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/x120"
+                    android:layout_height="@dimen/x120"
+                    android:src="@mipmap/video_camera_open_state" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x20"
+                    android:text="关闭摄像头"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/x24" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!--取消 接听-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linear_qiehuan_camera"
+            android:layout_marginTop="@dimen/x50"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <!--取消-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_refuse_call"
+                    android:layout_width="@dimen/x120"
+                    android:layout_height="@dimen/x120"
+                    android:background="@mipmap/hold_on" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x20"
+                    android:text="取消"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/x24" />
+
+            </LinearLayout>
+
+            <!--接听-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x210"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_answer_call"
+                    android:layout_width="@dimen/x120"
+                    android:layout_height="@dimen/x120"
+                    android:background="@mipmap/revice_call" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/x20"
+                    android:text="接听"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/x24" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <!-- 接通状态 -->
+    <LinearLayout
+        android:id="@+id/ll_voice_control"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/image_shouqi_video"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/x50"
+            android:layout_marginLeft="@dimen/x40"
+            android:layout_marginTop="@dimen/x54"
+            android:src="@mipmap/shouqi_screen" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <!--静音  时间  关闭摄像头-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <!--静音-->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_mute"
+                        android:layout_width="@dimen/x120"
+                        android:layout_height="@dimen/x120"
+                        android:src="@mipmap/jing_yin_close" />
+
+                    <TextView
+                        android:id="@+id/test"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/x20"
+                        android:text="静音"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/x24" />
+
+                </LinearLayout>
+
+                <!--时间-->
+                <com.hyphenate.fluter.widget.MyChronometer
+                    android:id="@+id/chronometer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="15:20"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/x28" />
+
+
+                <!--关闭摄像头-->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/image_close_camera"
+                        android:layout_width="@dimen/x120"
+                        android:layout_height="@dimen/x120"
+                        android:src="@mipmap/video_camera_open_state" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/x20"
+                        android:text="关闭摄像头"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/x24" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <!--切换摄像头 挂断 免提-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x50"
+                android:layout_marginBottom="@dimen/x70"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <!--切换摄像头-->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/image_qiehuan_camera"
+                        android:layout_width="@dimen/x120"
+                        android:layout_height="@dimen/x120"
+                        android:src="@mipmap/video_qiehuan_camera" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/x20"
+                        android:text="切换摄像头"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/x24" />
+
+                </LinearLayout>
+
+
+                <!--挂断-->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/image_hold_on"
+                        android:layout_width="@dimen/x120"
+                        android:layout_height="@dimen/x120"
+                        android:src="@mipmap/hold_on" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/x20"
+                        android:text="挂断"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/x24" />
+
+                </LinearLayout>
+
+
+                <!--免提-->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_handsfree"
+                        android:layout_width="@dimen/x120"
+                        android:layout_height="@dimen/x120"
+                        android:src="@mipmap/mian_ti_close" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/x20"
+                        android:text="免提"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/x24" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--  00000000000000000000000000000000000000000   -->
+
+
+    <!--<RelativeLayout
+        android:id="@+id/ll_btns"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <LinearLayout
+            android:id="@+id/ll_top_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            &lt;!&ndash;&lt;!&ndash;连接状态&ndash;&gt;
+            <TextView
+                android:id="@+id/tv_call_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:textColor="@color/voip_interface_text_color"
+                android:textSize="22sp"
+                android:visibility="visible" />&ndash;&gt;
+
+            &lt;!&ndash;<com.hyphenate.chatuidemo.widget.MyChronometer
+                android:id="@+id/chronometer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chronometer"
+                android:textColor="#fff"
+                android:visibility="invisible"
+                tools:ignore="HardcodedText" />&ndash;&gt;
+
+            <TextView
+                android:id="@+id/tv_is_p2p"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff" />
+
+            &lt;!&ndash;对方昵称&ndash;&gt;
+            <TextView
+                android:id="@+id/tv_nick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="张三"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+        &lt;!&ndash; 演示视频录制功能 &ndash;&gt;
+        <Button
+            android:id="@+id/btn_record_video"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_top_container"
+            android:text="@string/recording_video"
+            android:visibility="gone" />
+
+        &lt;!&ndash;切换摄像头&ndash;&gt;
+        <Button
+            android:id="@+id/btn_switch_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_record_video"
+            android:text="@string/switch_camera" />
+
+        <Button
+            android:id="@+id/btn_capture_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_switch_camera"
+            android:text="@string/capture_image" />
+
+        <SeekBar
+            android:id="@+id/seekbar_y_detal"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_capture_image"
+            android:max="200"
+            android:progress="100" />
+        &lt;!&ndash;     <Button
+            android:layout_marginTop="3dp"
+            android:id="@+id/btn_toggle_video_stream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="暂停视频"
+            android:layout_below="@id/btn_record_video"
+            /> &ndash;&gt;
+
+        &lt;!&ndash;<TextView
+            android:id="@+id/tv_call_monitor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/local_surface"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="6dp"
+            android:textColor="#afff"
+            android:textSize="12sp" />&ndash;&gt;
+
+        <LinearLayout
+            android:id="@+id/ll_surface_baseline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:paddingTop="8dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px" />
+
+            <LinearLayout
+                android:id="@+id/ll_bottom_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="18dp">
+
+                <LinearLayout
+                    android:id="@+id/ll_voice_control"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="DisableBaselineAlignment">
+
+                    &lt;!&ndash;静音&ndash;&gt;
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_mute"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/em_icon_mute_normal" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:gravity="center"
+                            android:text="@string/mute"
+                            android:textColor="#666167" />
+                    </LinearLayout>
+
+                    &lt;!&ndash;免提&ndash;&gt;
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_handsfree"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/em_icon_speaker_normal" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:gravity="center"
+                            android:text="@string/Hands_free"
+                            android:textColor="#666167" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                    &lt;!&ndash;发起方  挂断按钮&ndash;&gt;
+                    &lt;!&ndash;<Button
+                        android:id="@+id/btn_hangup_call"
+                        android:layout_width="fill_parent"
+                        android:layout_height="55dp"
+                        android:background="@drawable/em_call_hangup_bg"
+                        android:gravity="center"
+                        android:text="@string/hang_up"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:visibility="invisible" />&ndash;&gt;
+
+                    &lt;!&ndash;接收方  接受和拒绝&ndash;&gt;
+                    &lt;!&ndash;<LinearLayout
+                        android:id="@+id/ll_coming_call00"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        &lt;!&ndash;<Button
+                            android:id="@+id/btn_refuse_call"
+                            android:layout_width="wrap_content"
+                            android:layout_height="55dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/em_call_hangup_bg"
+                            android:gravity="center"
+                            android:text="@string/hang_up"
+                            android:textColor="@android:color/white"
+                            android:textSize="20sp" />&ndash;&gt;
+
+                        &lt;!&ndash;<Button
+                            android:id="@+id/btn_answer_call"
+                            android:layout_width="wrap_content"
+                            android:layout_height="55dp"
+                            android:layout_marginLeft="30dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/em_call_answer_bg"
+                            android:gravity="center"
+                            android:text="@string/answer"
+                            android:textColor="@android:color/white"
+                            android:textSize="20sp" />&ndash;&gt;
+                    </LinearLayout>&ndash;&gt;
+
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_network_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/white"
+        android:visibility="gone" />-->
+
+</RelativeLayout>

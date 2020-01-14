@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <com.hyphenate.fluter.robot_utils.MyActionBar
+        android:id="@+id/action_bar_huan_xin_robbt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:background="#000000" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x32">
+
+
+        <ImageView
+            android:id="@+id/image_huanxing_robbt"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/x100"
+            android:layout_marginLeft="@dimen/x28"
+            android:background="@drawable/huanxing_robbt_bg"
+            android:src="@mipmap/huan_xin_robbet" />
+
+
+        <TextView
+            android:id="@+id/tv_robbt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_toRightOf="@+id/image_huanxing_robbt"
+            android:text="苏风风的机器人"
+            android:textColor="#333333"
+            android:textSize="@dimen/x34" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x30"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/image_already_bind"
+                android:layout_width="@dimen/x40"
+                android:layout_height="@dimen/x40"
+                android:src="@mipmap/already_bind" />
+
+
+            <TextView
+                android:id="@+id/tv_already_bind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x16"
+                android:text="已绑定"
+                android:textColor="#666666"
+                android:textSize="@dimen/x28" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/x200"
+        android:text="请选择您对机器人进行的操作"
+        android:textColor="#666666"
+        android:textSize="@dimen/x28" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x14"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <!--发送消息-->
+        <LinearLayout
+            android:id="@+id/linear_send_msg"
+            android:layout_width="@dimen/x212"
+            android:layout_height="@dimen/x212"
+            android:background="@mipmap/huan_bg"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/x50"
+                android:layout_height="@dimen/x43"
+                android:src="@mipmap/huanxing_msg" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x31"
+                android:text="发送消息"
+                android:textColor="#666666"
+                android:textSize="@dimen/x24" />
+
+
+        </LinearLayout>
+
+        <!--语音拨打-->
+        <LinearLayout
+            android:id="@+id/linear_call"
+            android:layout_width="@dimen/x212"
+            android:layout_height="@dimen/x212"
+            android:layout_marginLeft="@dimen/x8"
+            android:background="@mipmap/huan_bg"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/x50"
+                android:layout_height="@dimen/x43"
+                android:src="@mipmap/huanxing_call" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x31"
+                android:text="语音拨打"
+                android:textColor="#666666"
+                android:textSize="@dimen/x24" />
+
+
+        </LinearLayout>
+
+        <!--视频通话-->
+        <LinearLayout
+            android:id="@+id/linear_video_call"
+            android:layout_width="@dimen/x212"
+            android:layout_height="@dimen/x212"
+            android:layout_marginLeft="@dimen/x8"
+            android:background="@mipmap/huan_bg"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/x50"
+                android:layout_height="@dimen/x43"
+                android:src="@mipmap/huanxing_video" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x31"
+                android:text="视频通话"
+                android:textColor="#666666"
+                android:textSize="@dimen/x24" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

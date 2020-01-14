@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".robot_activity.SettingActivity">
+
+
+    <com.hyphenate.fluter.robot_utils.MyActionBar
+        android:id="@+id/action_bar_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#4285F4" />
+
+    <!--修改登录密码-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x120"
+        android:layout_marginLeft="@dimen/x52"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="修改登录密码"
+            android:textColor="#333333"
+            android:textSize="@dimen/x30" />
+
+        <LinearLayout
+            android:id="@+id/linear_update_mima"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/x30"
+            android:paddingRight="@dimen/x30">
+
+            <ImageView
+                android:layout_width="@dimen/x16"
+                android:layout_height="@dimen/x30"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/personal_right_arrow" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:layout_marginLeft="@dimen/x30"
+        android:layout_marginRight="@dimen/x30"
+        android:background="#DEDEDE" />
+
+    <!--清理缓存-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x120"
+        android:layout_marginLeft="@dimen/x52"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="清理缓存"
+            android:textColor="#333333"
+            android:textSize="@dimen/x30" />
+
+
+        <TextView
+            android:id="@+id/tv_setting_cache_num"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="34M"
+            android:textColor="#999999"
+            android:textSize="@dimen/x30" />
+
+
+        <LinearLayout
+            android:id="@+id/linear_clear_cache"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/x20"
+            android:paddingRight="@dimen/x30">
+
+            <ImageView
+                android:layout_width="@dimen/x16"
+                android:layout_height="@dimen/x30"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/personal_right_arrow" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:layout_marginLeft="@dimen/x30"
+        android:layout_marginRight="@dimen/x30"
+        android:background="#DEDEDE" />
+
+    <!--意见反馈-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x120"
+        android:layout_marginLeft="@dimen/x52"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="意见反馈"
+            android:textColor="#333333"
+            android:textSize="@dimen/x30" />
+
+        <LinearLayout
+            android:id="@+id/linear_yijian_fankui"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/x30"
+            android:paddingRight="@dimen/x30">
+
+            <ImageView
+                android:layout_width="@dimen/x16"
+                android:layout_height="@dimen/x30"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/personal_right_arrow" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:layout_marginLeft="@dimen/x30"
+        android:layout_marginRight="@dimen/x30"
+        android:background="#DEDEDE" />
+
+    <!--退出登录-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_exit_login"
+            android:layout_width="@dimen/x340"
+            android:layout_height="@dimen/x88"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/x30"
+            android:background="@drawable/my_friend_delete_friend_bg"
+            android:gravity="center"
+            android:text="退出登录"
+            android:textColor="#999999"
+            android:textSize="@dimen/x32" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

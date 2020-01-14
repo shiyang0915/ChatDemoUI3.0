@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/view_line" />
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:layout_above="@+id/main_bottom"
+        android:background="#DEDEDE" />
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        tools:ignore="DisableBaselineAlignment">
+
+        &lt;!&ndash;消息&ndash;&gt;
+        <RelativeLayout
+            android:id="@+id/btn_container_conversation"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+
+            <Button
+                android:id="@+id/btn_conversation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#f266ff"
+                android:drawableTop="@drawable/em_tab_chat_bg"
+                android:onClick="onTabClicked"
+                android:text="消息"
+                android:textColor="#79D5FF"
+                android:textSize="@dimen/x20" />
+
+            <TextView
+                android:id="@+id/unread_msg_number"
+                android:layout_width="@dimen/x53"
+                android:layout_height="@dimen/x36"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/x1"
+                android:layout_marginRight="@dimen/x30"
+                android:background="@drawable/em_unread_count_bg"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        &lt;!&ndash;通讯录&ndash;&gt;
+        <RelativeLayout
+            android:id="@+id/btn_container_address_list"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btn_address_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:drawableTop="@drawable/em_tab_contact_list_bg"
+                android:onClick="onTabClicked"
+                android:paddingTop="7dip"
+                android:paddingBottom="2dip"
+                android:scaleType="matrix"
+                android:text="@string/address_book"
+                android:textColor="@color/em_main_botton_text_color"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/unread_address_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/em_unread_dot"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        &lt;!&ndash;个人中心&ndash;&gt;
+        <RelativeLayout
+            android:id="@+id/btn_container_setting"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btn_setting"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/em_main_bottom_item_bg"
+                android:drawableTop="@drawable/em_tab_setting_bg"
+                android:onClick="onTabClicked"
+                android:paddingTop="7dip"
+                android:paddingBottom="2dip"
+                android:scaleType="matrix"
+                android:text="@string/setting"
+                android:textColor="@color/em_main_botton_text_color"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="gone">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/em_main_bottom_item_bg"
+                android:drawableTop="@drawable/em_tab_setting_bg"
+                android:onClick="onTabClicked"
+                android:paddingTop="7dip"
+                android:paddingBottom="2dip"
+                android:scaleType="matrix"
+                android:text="@string/setting"
+                android:textColor="@color/em_main_botton_text_color"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+
+    </LinearLayout>-->
+
+    <!--底部tab-->
+    <LinearLayout
+        android:id="@+id/main_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/x8">
+
+        <!--消息-->
+        <RelativeLayout
+            android:id="@+id/tab_relative_msg"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:onClick="onTabClicked">
+
+            <ImageView
+                android:id="@+id/image_tab_msg"
+                android:layout_width="@dimen/x50"
+                android:layout_height="@dimen/x50"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/x15"
+                android:background="@drawable/tab_msg_image_bg" />
+
+            <TextView
+                android:id="@+id/tv_tab_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image_tab_msg"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/x5"
+                android:text="消息"
+                android:textColor="@color/tab_selected_bg"
+                android:textSize="@dimen/x20" />
+
+
+            <TextView
+                android:id="@+id/unread_msg_number"
+                android:layout_width="@dimen/x53"
+                android:layout_height="@dimen/x36"
+                android:layout_marginLeft="-20px"
+                android:layout_marginTop="@dimen/x3"
+                android:layout_toRightOf="@+id/image_tab_msg"
+                android:background="@drawable/em_unread_count_bg"
+                android:gravity="center"
+                android:text="12"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/x24"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+
+        <!--通讯录-->
+        <RelativeLayout
+            android:id="@+id/tab_relative_contact"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:onClick="onTabClicked">
+
+            <ImageView
+                android:id="@+id/image_tab_contact"
+                android:layout_width="@dimen/x50"
+                android:layout_height="@dimen/x50"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/x15"
+                android:background="@drawable/tab_contact_bg" />
+
+            <TextView
+                android:id="@+id/tv_tab_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image_tab_contact"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/x5"
+                android:text="通讯录"
+                android:textColor="@color/tab_selected_bg"
+                android:textSize="@dimen/x20" />
+
+
+            <TextView
+                android:id="@+id/unread_address_number"
+                android:layout_width="@dimen/x36"
+                android:layout_height="@dimen/x36"
+                android:layout_marginLeft="-15px"
+                android:layout_marginTop="@dimen/x3"
+                android:layout_toRightOf="@+id/image_tab_contact"
+                android:background="@mipmap/new_priends_bg"
+                android:gravity="center"
+                android:text="12"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/x24"
+                android:visibility="visible" />
+
+
+        </RelativeLayout>
+
+        <!--个人中心-->
+        <RelativeLayout
+            android:id="@+id/tab_relative_personal"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:onClick="onTabClicked">
+
+            <ImageView
+                android:id="@+id/image_tab_personal"
+                android:layout_width="@dimen/x50"
+                android:layout_height="@dimen/x50"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/x15"
+                android:background="@drawable/tab_personal_bg" />
+
+            <TextView
+                android:id="@+id/tv_tab_personal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/image_tab_personal"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/x5"
+                android:text="个人中心"
+                android:textColor="@color/tab_selected_bg"
+                android:textSize="@dimen/x20" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
